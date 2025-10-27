@@ -1,0 +1,278 @@
+/*--------------------------------------------------------------
+  BlueRetro Theme for Milligram.css
+  Author: Damien Tanner
+  Description: A retro-modern monochrome blue aesthetic
+  Compatible with: milligram.css v1.4+
+--------------------------------------------------------------*/
+
+/* ---------- Root Theme Variables ---------- */
+:root {
+  --background: oklch(0.9721 0.0158 110.5501);
+  --foreground: oklch(0.5066 0.2501 271.8903);
+  --card: oklch(0.9721 0.0158 110.5501);
+  --card-foreground: oklch(0.5066 0.2501 271.8903);
+  --primary: oklch(0.5066 0.2501 271.8903);
+  --primary-foreground: oklch(1 0 0);
+  --border: oklch(0.5066 0.2501 271.8903);
+  --muted: oklch(0.9189 0.0147 106.6853);
+  --muted-foreground: oklch(0.5066 0.2501 271.8903);
+  --accent: oklch(0.9168 0.0214 109.7161);
+  --accent-foreground: oklch(0.4486 0.2266 271.5512);
+  --ring: oklch(0.468 0.2721 279.6007);
+  --font-sans: "Geist Mono", monospace, sans-serif;
+  --radius: 0rem;
+  --shadow: 4px 4px 0px 0px oklch(0.468 0.2721 279.6007 / 0.15);
+}
+
+/* ---------- Global Overrides ---------- */
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  border-radius: var(--radius);
+  text-transform: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--foreground);
+  font-weight: 600;
+  text-transform: none;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--accent-foreground);
+}
+
+/* ---------- Cards / Panels ---------- */
+.card,
+fieldset,
+section,
+form {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  border-radius: var(--radius);
+}
+
+/* ---------- Buttons ---------- */
+button,
+.button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  background-color: var(--primary);
+  border: 0.1rem solid var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-transform: none;
+}
+
+button:hover,
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover {
+  background-color: var(--accent);
+  border-color: var(--accent-foreground);
+  color: var(--accent-foreground);
+  transform: translateY(-1px);
+}
+
+button:active,
+.button:active {
+  background-color: var(--ring);
+  color: white;
+}
+
+/* Outline / Secondary Buttons */
+.button.button-outline,
+button.button-outline,
+input[type="button"].button-outline,
+input[type="reset"].button-outline,
+input[type="submit"].button-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+.button.button-outline:hover,
+button.button-outline:hover,
+input[type="button"].button-outline:hover,
+input[type="reset"].button-outline:hover,
+input[type="submit"].button-outline:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.button[disabled],
+button[disabled],
+input[type="button"][disabled],
+input[type="reset"][disabled],
+input[type="submit"][disabled] {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.button[disabled]:focus,
+.button[disabled]:hover,
+button[disabled]:focus,
+button[disabled]:hover,
+input[type="button"][disabled]:focus,
+input[type="button"][disabled]:hover,
+input[type="reset"][disabled]:focus,
+input[type="reset"][disabled]:hover,
+input[type="submit"][disabled]:focus,
+input[type="submit"][disabled]:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.button.button-outline[disabled]:focus,
+.button.button-outline[disabled]:hover,
+button.button-outline[disabled]:focus,
+button.button-outline[disabled]:hover,
+input[type="button"].button-outline[disabled]:focus,
+input[type="button"].button-outline[disabled]:hover,
+input[type="reset"].button-outline[disabled]:focus,
+input[type="reset"].button-outline[disabled]:hover,
+input[type="submit"].button-outline[disabled]:focus,
+input[type="submit"].button-outline[disabled]:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.button.button-clear,
+button.button-clear,
+input[type="button"].button-clear,
+input[type="reset"].button-clear,
+input[type="submit"].button-clear {
+  background: transparent;
+  border-color: transparent;
+  color: var(--primary);
+}
+
+.button.button-clear[disabled]:focus,
+.button.button-clear[disabled]:hover,
+button.button-clear[disabled]:focus,
+button.button-clear[disabled]:hover,
+input[type="button"].button-clear[disabled]:focus,
+input[type="button"].button-clear[disabled]:hover,
+input[type="reset"].button-clear[disabled]:focus,
+input[type="reset"].button-clear[disabled]:hover,
+input[type="submit"].button-clear[disabled]:focus,
+input[type="submit"].button-clear[disabled]:hover {
+  color: var(--primary);
+}
+
+/* ---------- Inputs & Forms ---------- */
+input,
+textarea,
+select {
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  color: var(--foreground);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+select:focus {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--primary) 50%),
+    linear-gradient(135deg, var(--primary) 50%, transparent 50%),
+    linear-gradient(var(--primary) 100%, var(--primary) 100%);
+  background-position:
+    calc(100% - 1.2rem) calc(50% - 0.3rem),
+    calc(100% - 0.7rem) calc(50% - 0.3rem),
+    calc(100% - 1.5rem) 50%;
+  background-size:
+    0.5rem 0.5rem,
+    0.5rem 0.5rem,
+    0.1rem 1.5rem;
+  background-repeat: no-repeat;
+}
+
+/* ---------- Tables ---------- */
+table {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--foreground);
+}
+th,
+td {
+  border-color: var(--border);
+}
+thead {
+  background-color: var(--muted);
+  color: var(--foreground);
+}
+
+/* ---------- Checkboxes / Radios ---------- */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--primary);
+}
+
+/* ---------- Utility Styles ---------- */
+pre {
+  border-left: 0.3rem solid var(--primary);
+}
+
+.shadow {
+  box-shadow: var(--shadow);
+}
+.text-accent {
+  color: var(--accent-foreground);
+}
+.bg-muted {
+  background: var(--muted);
+}
+.border {
+  border: 1px solid var(--border);
+}
+
+/* ---------- Animations ---------- */
+button,
+.card,
+input,
+textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* ---------- Dark Mode Overrides ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: oklch(0.16 0.03 260);
+    --foreground: oklch(0.88 0.04 265);
+    --card: oklch(0.2 0.03 260);
+    --card-foreground: var(--foreground);
+    --primary: oklch(0.72 0.14 270);
+    --primary-foreground: oklch(0.12 0.02 260);
+    --border: oklch(0.6 0.06 270);
+    --muted: oklch(0.24 0.03 265);
+    --muted-foreground: oklch(0.78 0.05 270);
+    --accent: oklch(0.3 0.05 270);
+    --accent-foreground: oklch(0.9 0.07 270);
+    --ring: oklch(0.74 0.12 270);
+    --shadow: 4px 4px 0px 0px oklch(0.74 0.12 270 / 0.15);
+  }
+}

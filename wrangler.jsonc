@@ -1,0 +1,50 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "my-app",
+  "main": "src/index.tsx",
+  "compatibility_date": "2025-10-01",
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+    },
+  },
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["**/*.css"],
+      "fallthrough": false,
+    },
+  ],
+  "assets": {
+    "directory": "public",
+  },
+  "vars": {
+    "MY_ENV_VAR": "my-env-var-value",
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "my-db",
+      "database_id": "abc-112",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "env": {
+    "production": {
+      "name": "my-app",
+      "vars": {
+        "MY_ENV_VAR": "my-env-var-value",
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "my-db",
+          "database_id": "abc-112",
+          "migrations_dir": "migrations",
+        },
+      ],
+    },
+  },
+}
