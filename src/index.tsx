@@ -1,18 +1,18 @@
 import { Hono } from "hono";
 import { jsxRenderer, useRequestContext } from "hono/jsx-renderer";
-import type { Bindings } from "./types/bindings";
-
-type PageMeta = {
+interface PageMeta {
   title?: string;
   description?: string;
-};
+}
 
-type AppEnv = {
+interface Bindings {}
+
+interface AppEnv {
   Bindings: Bindings;
   Variables: {
     pageMeta?: PageMeta;
   };
-};
+}
 const DEFAULT_TITLE = "my-app";
 
 const app = new Hono<AppEnv>();
@@ -44,7 +44,6 @@ app.use(
 );
 
 app.get("/", async (c) => {
-  const episodes = await getEpisodes(c.env.DB);
 
   c.set("pageMeta", {
     title: DEFAULT_TITLE,
