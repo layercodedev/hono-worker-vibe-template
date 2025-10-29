@@ -27,7 +27,6 @@
     {
       "binding": "DB",
       "database_name": "my-db",
-      "database_id": "abc-112",
       "migrations_dir": "migrations",
     },
   ],
@@ -41,7 +40,6 @@
         {
           "binding": "DB",
           "database_name": "my-db",
-          "database_id": "abc-112",
           "migrations_dir": "migrations",
         },
       ],
